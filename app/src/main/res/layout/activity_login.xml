@@ -42,7 +42,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log In"/>
+            android:text="Sign In"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
