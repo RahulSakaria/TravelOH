@@ -27,13 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Email"
+        android:inputType="textEmailAddress"
         android:textColor="#FFFFFF" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:textColor="#FFFFFF"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Enter Password"/>
     </LinearLayout>
 
     <LinearLayout
