@@ -15,7 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserInputActivity"></activity>
+        <activity android:name=".UserInputActivity">
+            <intent-filter>
+                <action android:name="com.example.hp.traveloh.UserInputActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
