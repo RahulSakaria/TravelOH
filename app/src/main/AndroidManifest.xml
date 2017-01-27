@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserInputActivity">
+        <activity android:name=".UserInputActivity"
+                  android:label="@string/createaccount">
             <intent-filter>
                 <action android:name="com.example.hp.traveloh.UserInputActivity" />
 
