@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:text="@string/name" />
 
         <EditText
             android:id="@+id/enter_person_name"
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DOB" />
+            android:text="@string/dob" />
 
         <EditText
             android:id="@+id/enter_person_dob"
@@ -53,12 +53,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender" />
+            android:text="@string/gender" />
 
         <Spinner
             android:id="@+id/gender_spinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Spinner>
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown">
+
+        </Spinner>
 
     </LinearLayout>
 
@@ -71,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email Id" />
+            android:text="@string/email_id" />
 
         <EditText
             android:id="@+id/enter_person_emailid"
@@ -89,7 +92,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Password" />
+            android:text="@string/create_password" />
 
         <EditText
             android:id="@+id/enter_person_password"
@@ -107,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retype Password" />
+            android:text="@string/retype_password" />
 
         <EditText
             android:id="@+id/enter_person_retypepassword"

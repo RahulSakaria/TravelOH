@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TravelOH</string>
+    <string name="name">Name</string>
+    <string name="dob">DOB</string>
+    <string name="gender">Gender</string>
+    <string name="email_id">Email Id</string>
+    <string name="create_password">Create Password</string>
+    <string name="retype_password">Retype Password</string>
 </resources>
