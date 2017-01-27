@@ -48,7 +48,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,9 +58,10 @@
 
         <Spinner
             android:id="@+id/gender_spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown">
+            android:spinnerMode="dropdown"
+            android:entries="@array/gender_dropdown">
 
         </Spinner>
 
