@@ -7,4 +7,5 @@
     <string name="create_password">Create Password</string>
     <string name="retype_password">Retype Password</string>
     <string name="createanaccount">Create an account</string>
+    <string name="enter_password">Enter Password</string>
 </resources>
