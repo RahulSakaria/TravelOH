@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -10,54 +11,96 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hp.traveloh.LoginActivity"
     android:orientation="vertical"
-    android:background="#FFF000">
+    android:background="#212121">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:text="travelOH"
+            android:textSize="36sp"
+            android:textColor="#691"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
         android:textColor="#FFFFFF"
-        android:textSize="45sp"
+
         android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress"
-        android:textColor="#FFFFFF" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:id="@+id/editText" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Enter Password"/>
+            android:textColorHint="#FFFFFF"
+            android:hint="Enter Password"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center|top">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log In"
             android:textColor="#FFFFFF"
-            android:id="@+id/login_button"/>
+            android:id="@+id/login_button"
+            android:background="#3E50B4"
+            android:layout_gravity="top"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textColor="#FFFFFF"
-            android:id="@+id/signup_button"
-            android:onClick="SignUp"/>
+
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:text="Don't have an account?"
+            android:gravity="bottom"
+            android:textAlignment="center"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createanaccount"
+            android:textColor="#9B2"
+            android:id="@+id/signup"
+            android:onClick="SignUp"
+            android:background="#3E50B4"/>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

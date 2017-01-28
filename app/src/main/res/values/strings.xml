@@ -6,5 +6,5 @@
     <string name="email_id">Email Id</string>
     <string name="create_password">Create Password</string>
     <string name="retype_password">Retype Password</string>
-    <string name="createaccount">Create Account</string>
+    <string name="createanaccount">Create an account</string>
 </resources>

@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserInputActivity"
-                  android:label="@string/createaccount">
+                  android:label="Create Account">
             <intent-filter>
                 <action android:name="com.example.hp.traveloh.UserInputActivity" />
 
