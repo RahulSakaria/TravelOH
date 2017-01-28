@@ -4,7 +4,7 @@
     android:id="@+id/activity_user_input"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#263238"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.example.hp.traveloh.UserInputActivity">
@@ -24,7 +24,8 @@
             android:id="@+id/enter_person_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -37,7 +38,8 @@
             android:id="@+id/enter_person_dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textColor="#FFFFFF"/>
 
         <TextView
             android:id="@+id/textView"
@@ -69,7 +71,8 @@
             android:id="@+id/enter_person_emailid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +84,8 @@
             android:id="@+id/enter_person_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -94,7 +98,8 @@
             android:id="@+id/enter_person_retypepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -107,7 +112,8 @@
             android:id="@+id/enter_person_retypepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="#FFFFFF"/>
 
 
         <Button
