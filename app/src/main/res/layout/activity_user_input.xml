@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_name"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dob"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_dob"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:text="@string/gender"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <Spinner
             android:id="@+id/gender_spinner"
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email_id"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_emailid"
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_password"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_password"
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/retype_password"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_retypepassword"
@@ -101,7 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone Number"
-            android:textColor="#FF3F80" />
+            android:textColor="#2196F3" />
 
         <EditText
             android:id="@+id/enter_person_retypepassword"
@@ -114,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="#FF3F80"
+            android:background="#2196F3"
             android:onClick="CreateAccount"
             android:text="Create Account"
             android:textColor="#FFFFFF"
