@@ -10,8 +10,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
 
-    EditText emailid = (EditText) findViewById(R.id.enter_password);
-    EditText password = (EditText) findViewById(R.id.enter_password);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +19,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     public void LogIn(View view){
-        if(emailid.getText().equals("rahulsakaria97@gmail.com") && password.getText().equals("password"))
+
+        EditText emailid = (EditText) findViewById(R.id.enter_email);
+        EditText password = (EditText) findViewById(R.id.enter_password);
+        if(emailid.getText().toString().equals("rahulsakaria97@gmail.com") && password.getText().toString().equals("password"))
         {
             Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,HomeActivity.class);
+            Intent intent = new Intent(this,HomeScreenActivity.class);
             startActivity(intent);
         }
         else

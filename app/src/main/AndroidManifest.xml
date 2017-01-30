@@ -15,10 +15,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserInputActivity"
-                  android:label="Create Account">
+        <activity
+            android:name=".UserInputActivity"
+            android:label="Create Account">
             <intent-filter>
                 <action android:name="com.example.hp.traveloh.UserInputActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeScreenActivity"
+                  android:label="Home">
+            <intent-filter>
+                <action android:name="com.example.hp.traveloh.HomeScreenActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
