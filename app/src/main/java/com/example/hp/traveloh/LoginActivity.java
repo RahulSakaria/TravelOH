@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText emailid = (EditText) findViewById(R.id.enter_email);
         EditText password = (EditText) findViewById(R.id.enter_password);
-        boolean email = emailid.getText().toString().equals("rahulsakaria97@gmail.com");
-        boolean pass = password.getText().toString().equals("password");
+        boolean email = emailid.getText().toString().equals("rahul");
+        boolean pass = password.getText().toString().equals("pass");
         if(email && pass)
         {
             Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show();
