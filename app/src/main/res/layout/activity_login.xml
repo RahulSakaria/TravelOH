@@ -52,6 +52,7 @@
             android:textColorHint="#FFFFFF"
             android:hint="@string/enter_password"
             android:textColor="#FFFFFF"
+            android:id="@+id/enter_password"
             android:layout_weight="0.43" />
 
     </LinearLayout>
