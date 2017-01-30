@@ -21,7 +21,7 @@
             android:layout_height="128dp"
             android:text="travelOH"
             android:textSize="36sp"
-            android:textColor="#03A9F4"
+            android:textColor="@color/appNameColor"
             android:gravity="center"
             android:textStyle="italic"
             android:textAlignment="center"/>

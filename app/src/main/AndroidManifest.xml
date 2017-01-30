@@ -24,18 +24,21 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".HomeScreenActivity"
-                  android:label="Home">
+        <activity
+            android:name=".HomeScreenActivity"
+            android:label="Home">
             <intent-filter>
                 <action android:name="com.example.hp.traveloh.HomeScreenActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashActivity"></activity>
     </application>
 
 </manifest>
