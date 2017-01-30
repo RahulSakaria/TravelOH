@@ -8,7 +8,7 @@
     android:padding="16dp"
     tools:context="com.example.hp.traveloh.LoginActivity"
     android:orientation="vertical"
-    android:background="#263238"
+    android:background="@color/colorBackground"
     android:weightSum="1"
     tools:drawOntop="true">
 
@@ -41,6 +41,7 @@
             android:ems="10"
             android:hint="@string/email_id"
             android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
             android:id="@+id/enter_email"
             android:requiresFadingEdge="vertical"
             android:layout_weight="0.43" />

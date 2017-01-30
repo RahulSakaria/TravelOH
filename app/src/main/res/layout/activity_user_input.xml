@@ -4,7 +4,7 @@
     android:id="@+id/activity_user_input"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#263238"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.example.hp.traveloh.UserInputActivity">
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_name"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dob"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_dob"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:text="@string/gender"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <Spinner
             android:id="@+id/gender_spinner"
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email_id"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_emailid"
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_password"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_password"
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/retype_password"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_retypepassword"
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone Number"
-            android:textColor="#2196F3" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/enter_person_retypepassword"

@@ -17,12 +17,16 @@
         </activity>
         <activity
             android:name=".UserInputActivity"
-            android:label="Create Account">
+            android:label="Create Account"
+            android:parentActivityName=".LoginActivity">
             <intent-filter>
                 <action android:name="com.example.hp.traveloh.UserInputActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
         </activity>
         <activity android:name=".HomeScreenActivity"
                   android:label="Home">
