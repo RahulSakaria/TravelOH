@@ -22,7 +22,7 @@ public class LoginActivity extends Activity {
 
 
     }
-    /*public void LogIn(View view){
+    public void LogIn(View view){
 
         EditText emailid = (EditText) findViewById(R.id.enter_email);
         EditText password = (EditText) findViewById(R.id.enter_password);
@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
         {
             Toast.makeText(this,"Enter valid email/password",Toast.LENGTH_SHORT).show();
         }
-    }*/
+    }
 
         public void SignUp(View view){
             Intent intent = new Intent(this,UserInputActivity.class);

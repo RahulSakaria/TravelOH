@@ -1,6 +1,7 @@
 package com.example.hp.traveloh;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +17,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class UserInputActivity extends AppCompatActivity {
+public class UserInputActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText emailID, password;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private Button createAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,10 @@ public class UserInputActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         emailID = (EditText) findViewById(R.id.enter_person_emailid);
         password = (EditText) findViewById(R.id.enter_person_password);
-
+        createAccount = (Button) findViewById(R.id.createAccount);
+        createAccount.setOnClickListener(this);
     }
 
-    public void CreateAccount(View view) {
-        registerUser();
-    }
 
     public void registerUser() {
         String email = emailID.getText().toString().trim();
@@ -56,6 +56,9 @@ public class UserInputActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(UserInputActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
+                            progressDialog.cancel();
+                            Intent intent = new Intent(UserInputActivity.this,LoginActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(UserInputActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             progressDialog.cancel();
@@ -66,4 +69,10 @@ public class UserInputActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        if(view == createAccount){
+            registerUser();
+        }
+    }
 }
