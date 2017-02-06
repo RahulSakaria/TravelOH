@@ -99,7 +99,6 @@
             android:layout_height="wrap_content"
             android:text="@string/createanaccount"
             android:textColor="#9B2"
-            android:id="@+id/signup"
             android:onClick="SignUp"
             android:background="#2196F3"/>
 

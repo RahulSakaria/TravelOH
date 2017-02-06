@@ -69,7 +69,8 @@
             android:onClick="CreateAccount"
             android:text="Create Account"
             android:textColor="#FFFFFF"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:id="@+id/createAccount"/>
 
     </LinearLayout>
 
