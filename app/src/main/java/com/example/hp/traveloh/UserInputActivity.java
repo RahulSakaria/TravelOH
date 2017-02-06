@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class UserInputActivity extends AppCompatActivity implements View.OnClickListener{
+public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText emailID, password;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -35,16 +35,24 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         createAccount.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        if (view == createAccount) {
+            registerUser();
+        }
+    }
 
-    public void registerUser() {
+    private void registerUser() {
         String email = emailID.getText().toString().trim();
         String passwd = password.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show();
+            return;
         }
         if (TextUtils.isEmpty(passwd)) {
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         progressDialog.setMessage("Registering");
@@ -55,13 +63,14 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            progressDialog.dismiss();
                             Toast.makeText(UserInputActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
-                            progressDialog.cancel();
-                            Intent intent = new Intent(UserInputActivity.this,LoginActivity.class);
+                            finish();
+                            Intent intent = new Intent(UserInputActivity.this, HomeScreenActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(UserInputActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                            progressDialog.cancel();
+                            progressDialog.dismiss();
                         }
 
                     }
@@ -69,10 +78,4 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-    @Override
-    public void onClick(View view) {
-        if(view == createAccount){
-            registerUser();
-        }
-    }
 }

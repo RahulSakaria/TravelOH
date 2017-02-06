@@ -1,48 +1,93 @@
 package com.example.hp.traveloh;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class LoginActivity extends Activity implements View.OnClickListener {
 
 
-
+    private EditText emailid, password;
+    private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
+    private TextView signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
-
-
-    }
-    public void LogIn(View view){
-
-        EditText emailid = (EditText) findViewById(R.id.enter_email);
-        EditText password = (EditText) findViewById(R.id.enter_password);
-        boolean email = emailid.getText().toString().equals("rahul");
-        boolean pass = password.getText().toString().equals("pass");
-        if(email && pass)
-        {
-            Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,HomeScreenActivity.class);
+        progressDialog = new ProgressDialog(this);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() != null) {
+            finish();
+            Intent intent = new Intent(this, HomeScreenActivity.class);
             startActivity(intent);
         }
-        else
-        {
-            Toast.makeText(this,"Enter valid email/password",Toast.LENGTH_SHORT).show();
-        }
+        emailid = (EditText) findViewById(R.id.enter_email);
+        password = (EditText) findViewById(R.id.enter_password);
+        signUp = (TextView) findViewById(R.id.SignUp);
+        signUp.setOnClickListener(this);
     }
 
-        public void SignUp(View view){
-            Intent intent = new Intent(this,UserInputActivity.class);
+    private void loginUser() {
+        String email = emailid.getText().toString().trim();
+        String passwd = password.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(LoginActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(passwd)) {
+            Toast.makeText(LoginActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        progressDialog.setMessage("Logging In");
+        progressDialog.show();
+
+        firebaseAuth.signInWithEmailAndPassword(email, passwd)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            finish();
+                            Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                            startActivity(intent);
+                        } else {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Login Failed Check Username/Password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    public void LogIn(View view) {
+        loginUser();
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        if(view == signUp){
+            Intent intent = new Intent(this, UserInputActivity.class);
             startActivity(intent);
+        }
     }
 }
 

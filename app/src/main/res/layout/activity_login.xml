@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="com.example.hp.traveloh.LoginActivity"
-    android:orientation="vertical"
     android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:weightSum="1"
+    tools:context="com.example.hp.traveloh.LoginActivity"
     tools:drawOntop="true">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="128dp"
-            android:text="travelOH"
-            android:textSize="36sp"
-            android:textColor="@color/appNameColor"
             android:gravity="center"
-            android:textStyle="italic"
-            android:textAlignment="center"/>
+            android:text="travelOH"
+            android:textAlignment="center"
+            android:textColor="@color/appNameColor"
+            android:textSize="36sp"
+            android:textStyle="italic" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="0.44">
+        android:layout_weight="0.44"
+        android:orientation="vertical">
 
 
         <EditText
+            android:id="@+id/enter_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:layout_weight="0.43"
             android:ems="10"
             android:hint="@string/email_id"
-            android:textColorHint="#FFFFFF"
-            android:textColor="#FFFFFF"
-            android:id="@+id/enter_email"
+            android:inputType="textEmailAddress"
             android:requiresFadingEdge="vertical"
-            android:layout_weight="0.43" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
+            android:id="@+id/enter_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textColorHint="#FFFFFF"
+            android:layout_weight="0.43"
             android:hint="@string/enter_password"
+            android:inputType="textPassword"
             android:textColor="#FFFFFF"
-            android:id="@+id/enter_password"
-            android:layout_weight="0.43" />
+            android:textColorHint="#FFFFFF" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:layout_weight="0.17">
 
         <Button
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log In"
-            android:textColor="#FFFFFF"
-            android:id="@+id/login_button"
-            android:background="#2196F3"
             android:layout_gravity="top"
-            android:onClick="LogIn" />
-
+            android:background="#2196F3"
+            android:onClick="LogIn"
+            android:text="Log In"
+            android:textColor="#FFFFFF" />
 
 
     </LinearLayout>
@@ -82,28 +82,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/SignUp"
             android:layout_width="match_parent"
             android:layout_height="136dp"
-            android:text="Don't have an account?"
-            android:gravity="bottom"
-            android:textColor="#FFFFFF"
+            android:gravity="top"
+            android:text="@string/your_string_here"
             android:textAlignment="center"
-            android:id="@+id/textView3" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/createanaccount"
-            android:textColor="#9B2"
-            android:onClick="SignUp"
-            android:background="#2196F3"/>
-
+            android:textColor="#FFFFFF"
 
     </LinearLayout>
-
-
-</LinearLayout>
+    </LinearLayout>
