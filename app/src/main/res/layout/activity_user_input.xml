@@ -14,50 +14,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textColor="#FFFFFF" />
-
-        <EditText
-            android:id="@+id/enter_person_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:textColor="#FFFFFF"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dob"
-            android:textColor="#FFFFFF" />
-
-        <EditText
-            android:id="@+id/enter_person_dob"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:textColor="#FFFFFF"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:text="@string/gender"
-            android:textColor="#FFFFFF" />
-
-        <Spinner
-            android:id="@+id/gender_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:entries="@array/gender_dropdown"
-            android:spinnerMode="dropdown">
-
-        </Spinner>
 
 
         <TextView
@@ -102,18 +58,7 @@
             android:textColor="#FFFFFF"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:textColor="#FFFFFF" />
 
-        <EditText
-            android:id="@+id/enter_person_retypepassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:textColor="#FFFFFF"/>
 
 
         <Button
