@@ -3,11 +3,13 @@ package com.example.hp.traveloh;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private TextView signUp;
+    private Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         password = (EditText) findViewById(R.id.enter_password);
         signUp = (TextView) findViewById(R.id.SignUp);
         signUp.setOnClickListener(this);
+        login = (Button) findViewById(R.id.login_button);
+        login.setOnClickListener(this);
     }
 
     private void loginUser() {
@@ -55,7 +60,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             Toast.makeText(LoginActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
             return;
         }
-
         progressDialog.setMessage("Logging In");
         progressDialog.show();
 
@@ -77,16 +81,24 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 });
     }
 
-    public void LogIn(View view) {
-        loginUser();
-    }
 
+    private void sharedPref(){
+        SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("userName",emailid.getText().toString());
+        editor.putString("password",password.getText().toString());
+        editor.apply();
+    }
 
     @Override
     public void onClick(View view) {
         if(view == signUp){
             Intent intent = new Intent(this, UserInputActivity.class);
             startActivity(intent);
+        }
+        if(view == login){
+            sharedPref();
+            loginUser();
         }
     }
 }

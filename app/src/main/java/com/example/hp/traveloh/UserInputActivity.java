@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText emailID, password;
+    private EditText emailID, password,retyprPassword;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button createAccount;
@@ -31,6 +31,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         firebaseAuth = FirebaseAuth.getInstance();
         emailID = (EditText) findViewById(R.id.enter_person_emailid);
         password = (EditText) findViewById(R.id.enter_person_password);
+        retyprPassword = (EditText) findViewById(R.id.retypepassword);
         createAccount = (Button) findViewById(R.id.createAccount);
         createAccount.setOnClickListener(this);
     }
@@ -45,6 +46,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     private void registerUser() {
         String email = emailID.getText().toString().trim();
         String passwd = password.getText().toString().trim();
+        String retypepwd = retyprPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show();
@@ -54,27 +56,37 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (TextUtils.isEmpty(retypepwd)) {
+            Toast.makeText(this, "Please Retype Password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (passwd.equals(retypepwd)) {
+            progressDialog.setMessage("Registering");
+            progressDialog.show();
 
-        progressDialog.setMessage("Registering");
-        progressDialog.show();
+            firebaseAuth.createUserWithEmailAndPassword(email, passwd)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                progressDialog.dismiss();
+                                Toast.makeText(UserInputActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
+                                finish();
+                                Intent intent = new Intent(UserInputActivity.this, HomeScreenActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(UserInputActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }
 
-        firebaseAuth.createUserWithEmailAndPassword(email, passwd)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            progressDialog.dismiss();
-                            Toast.makeText(UserInputActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
-                            finish();
-                            Intent intent = new Intent(UserInputActivity.this, HomeScreenActivity.class);
-                            startActivity(intent);
-                        } else {
-                            Toast.makeText(UserInputActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
                         }
-
-                    }
-                });
+                    });
+        }
+        else
+        {
+            progressDialog.dismiss();
+            Toast.makeText(UserInputActivity.this, "Retype Correct Password", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

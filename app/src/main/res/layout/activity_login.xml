@@ -92,7 +92,6 @@
             android:gravity="top"
             android:text="@string/your_string_here"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
     </LinearLayout>

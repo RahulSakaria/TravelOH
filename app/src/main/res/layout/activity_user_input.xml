@@ -51,7 +51,7 @@
             android:textColor="#FFFFFF" />
 
         <EditText
-            android:id="@+id/enter_person_retypepassword"
+            android:id="@+id/retypepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
