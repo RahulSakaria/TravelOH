@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText emailID, password,retyprPassword;
+    private EditText emailID, password, retyprPassword;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button createAccount;
@@ -81,9 +81,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
 
                         }
                     });
-        }
-        else
-        {
+        } else {
             progressDialog.dismiss();
             Toast.makeText(UserInputActivity.this, "Retype Correct Password", Toast.LENGTH_SHORT).show();
         }

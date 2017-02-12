@@ -82,21 +82,21 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     }
 
 
-    private void sharedPref(){
-        SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+    private void sharedPref() {
+        SharedPreferences sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("userName",emailid.getText().toString());
-        editor.putString("password",password.getText().toString());
+        editor.putString("userName", emailid.getText().toString());
+        editor.putString("password", password.getText().toString());
         editor.apply();
     }
 
     @Override
     public void onClick(View view) {
-        if(view == signUp){
+        if (view == signUp) {
             Intent intent = new Intent(this, UserInputActivity.class);
             startActivity(intent);
         }
-        if(view == login){
+        if (view == login) {
             sharedPref();
             loginUser();
         }

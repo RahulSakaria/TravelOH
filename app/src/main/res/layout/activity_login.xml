@@ -61,9 +61,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.09"
         android:gravity="center"
-        android:orientation="vertical"
-        android:layout_weight="0.09">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/login_button"
@@ -92,6 +92,6 @@
             android:gravity="top"
             android:text="@string/your_string_here"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-    </LinearLayout>
+</LinearLayout>
