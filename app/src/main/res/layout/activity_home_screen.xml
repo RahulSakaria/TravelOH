@@ -11,6 +11,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hp.traveloh.HomeScreenActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/enter_person_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/enter_person_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="save"
+            android:onClick="saveData"/>
+
+    </LinearLayout>
     <Button
         android:id="@+id/SignOut"
         android:layout_width="wrap_content"
@@ -32,9 +71,11 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp" />
 
 </RelativeLayout>

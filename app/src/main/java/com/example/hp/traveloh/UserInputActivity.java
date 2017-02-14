@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 
 public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +24,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button createAccount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         if (view == createAccount) {
             registerUser();
+
         }
     }
 
@@ -86,6 +90,8 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
             Toast.makeText(UserInputActivity.this, "Retype Correct Password", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 
 
 }
