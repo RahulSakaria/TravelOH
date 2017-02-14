@@ -9,8 +9,8 @@ public class UserInformationData {
 
     public UserInformationData(){}
 
-    private String name;
-    private String location;
+    public String name;
+    public String location;
     public UserInformationData(String name, String location) {
         this.name = name;
         this.location = location;
