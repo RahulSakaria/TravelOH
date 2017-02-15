@@ -90,6 +90,4 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-
-
 }
