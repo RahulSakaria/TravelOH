@@ -9,5 +9,8 @@
     <string name="createanaccount">Create an account</string>
     <string name="enter_password">Enter Password</string>
     <string name="your_string_here">
-        Dont have an Account? <u>Sign Up</u>.</string>
+        <u>Don\'t have an Account?Sign Up</u>.</string>
+    <string-array name="clock">
+        <item>12:00 - 1:00</item>
+    </string-array>
 </resources>

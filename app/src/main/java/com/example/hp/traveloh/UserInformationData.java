@@ -24,7 +24,10 @@ public class UserInformationData {
         this.number = number;
     }
 
+    public UserInformationData(String name) {
+        this.name = name;
 
+    }
 }
 
 

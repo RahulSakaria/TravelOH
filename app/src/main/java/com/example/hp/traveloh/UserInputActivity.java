@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +25,8 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button createAccount;
+    EditText name;
+    DatabaseReference databaseReference;
 
 
     @Override
@@ -35,6 +40,8 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         retyprPassword = (EditText) findViewById(R.id.retypepassword);
         createAccount = (Button) findViewById(R.id.createAccount);
         createAccount.setOnClickListener(this);
+        name = (EditText) findViewById(R.id.name_enter);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
     }
 
     @Override
@@ -46,6 +53,13 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void registerUser() {
+        String names = name.getText().toString();
+        UserInformationData userInformationData = new UserInformationData(names);
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        databaseReference.child(names).setValue(userInformationData);
+        Toast.makeText(UserInputActivity.this, "User Data Saved", Toast.LENGTH_SHORT).show();
         String email = emailID.getText().toString().trim();
         String passwd = password.getText().toString().trim();
         String retypepwd = retyprPassword.getText().toString().trim();
