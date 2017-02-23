@@ -54,4 +54,12 @@
         android:layout_below="@id/mode_of_travel">
 
     </Spinner>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Logout"
+        android:background="@color/colorPrimary"
+        android:id="@+id/logout_user"/>
 </RelativeLayout>

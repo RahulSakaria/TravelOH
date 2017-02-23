@@ -11,24 +11,22 @@ public class UserInformationData {
     }
 
     public String name;
-    public String location;
-    public String lastname;
+    public String gender;
+    public String email;
     public String dob;
     public String number;
 
-    public UserInformationData(String name, String lastname, String location, String dob, String number) {
+    public UserInformationData(String name, String gender, String email, String dob, String number) {
         this.name = name;
-        this.lastname = lastname;
-        this.location = location;
+        this.gender = gender;
+        this.email = email;
         this.dob = dob;
         this.number = number;
     }
 
-    public UserInformationData(String name) {
-        this.name = name;
 
-    }
 }
+
 
 
 
