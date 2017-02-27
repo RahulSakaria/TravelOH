@@ -1,4 +1,4 @@
- package com.example.hp.traveloh;
+package com.example.hp.traveloh;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -28,6 +28,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private TextView signUp;
     private Button login;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         signUp.setOnClickListener(this);
         login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(this);
+        displayData();
     }
 
     private void loginUser() {
@@ -82,13 +84,23 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     }
 
 
-    private void sharedPref() {
-        SharedPreferences sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+    public void sharedPref() {
+        SharedPreferences sharedPref = getSharedPreferences("userInfo", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("userName", emailid.getText().toString());
-        editor.putString("password", password.getText().toString());
+        editor.putString("passwords", password.getText().toString());
         editor.apply();
     }
+
+    public void displayData() {
+        SharedPreferences sharedPref = getSharedPreferences("userInfo", MODE_PRIVATE);
+        String emailsp = sharedPref.getString("userName", "");
+        String passwordsp = sharedPref.getString("passwords", "");
+        emailid.setText(emailsp);
+        password.setText(passwordsp);
+
+    }
+
 
     @Override
     public void onClick(View view) {

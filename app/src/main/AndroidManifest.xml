@@ -39,7 +39,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".Home_Page"></activity>
+        <activity android:name=".Home_Page" />
+        <activity android:name=".PeopleAround">
+            <intent-filter>
+                <action android:name="com.example.hp.PeopleAround" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home_Page" />
+        </activity>
     </application>
 
 </manifest>

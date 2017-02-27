@@ -10,7 +10,73 @@
     <string name="enter_password">Enter Password</string>
     <string name="your_string_here">
         <u>Don\'t have an Account?Sign Up</u>.</string>
-    <string-array name="clock">
-        <item>12:00 - 1:00</item>
+    <string-array name="travel_time_range">
+        <item>00:00  - 01:00 </item>
+        <item>01:00  - 02:00 </item>
+        <item>02:00  - 03:00 </item>
+        <item>03:00  - 04:00 </item>
+        <item>04:00  - 05:00 </item>
+        <item>05:00  - 06:00 </item>
+        <item>06:00  - 07:00 </item>
+        <item>07:00  - 08:00 </item>
+        <item>08:00  - 09:00 </item>
+        <item>09:00  - 10:00 </item>
+        <item>10:00  - 11:00 </item>
+        <item>11:00  - 12:00 </item>
+        <item>12:00  - 13:00 </item>
+        <item>13:00  - 14:00 </item>
+        <item>14:00  - 15:00 </item>
+        <item>15:00  - 16:00 </item>
+        <item>16:00  - 17:00 </item>
+        <item>17:00  - 18:00 </item>
+        <item>18:00  - 19:00 </item>
+        <item>19:00  - 20:00 </item>
+        <item>20:00  - 21:00 </item>
+        <item>21:00  - 22:00 </item>
+        <item>22:00  - 23:00 </item>
+        <item>23:00  - 00:00 </item>
+
+
     </string-array>
+
+    <string-array name="from_station">
+        <item>Potheri Station</item>
+        <item>Abode Valley</item>
+        <item>Estancia</item>
+        <item>Chennai Beach</item>
+        <item>Phoenix</item>
+        <item>Valliammai Gate</item>
+        <item>Green Pearl</item>
+        <item>VGN</item>
+        <item>Airport</item>
+        <item>Chennai Central</item>
+        <item>Mahindra City</item>
+        <item>Ampa Skywalk</item>
+        <item>Express Avenue</item>
+
+    </string-array>
+
+    <string-array name="to_station">
+        <item>Potheri Station</item>
+        <item>Abode Valley</item>
+        <item>Estancia</item>
+        <item>Chennai Beach</item>
+        <item>Phoenix</item>
+        <item>Valliammai Gate</item>
+        <item>Green Pearl</item>
+        <item>VGN</item>
+        <item>Airport</item>
+        <item>Chennai Central</item>
+        <item>Mahindra City</item>
+        <item>Ampa Skywalk</item>
+        <item>Express Avenue</item>
+    </string-array>
+
+    <string-array name="mode_of_travel">
+        <item>Cab</item>
+        <item>Local Train</item>
+        <item>Bus</item>
+        <item>Auto</item>
+    </string-array>
+
 </resources>

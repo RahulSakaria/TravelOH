@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class UserInputActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText emailID, password, retyprPassword;
+    private EditText emailID, password, retypePassword;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button createAccount;
@@ -44,7 +44,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         databaseReference = FirebaseDatabase.getInstance().getReference();
         emailID = (EditText) findViewById(R.id.enter_person_emailid);
         password = (EditText) findViewById(R.id.enter_person_password);
-        retyprPassword = (EditText) findViewById(R.id.retypepassword);
+        retypePassword = (EditText) findViewById(R.id.retypepassword);
         createAccount = (Button) findViewById(R.id.createAccount);
         createAccount.setOnClickListener(this);
         fullname = (EditText) findViewById(R.id.full_name_enter);
@@ -57,6 +57,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         month_x = calendar.get(Calendar.MONTH);
         year_x = calendar.get(Calendar.YEAR);
         ShowDialogOnButtonClick();
+
     }
 
     @Override
@@ -71,7 +72,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
 
         String email = emailID.getText().toString().trim();
         String passwd = password.getText().toString().trim();
-        String retypepwd = retyprPassword.getText().toString().trim();
+        String retypepwd = retypePassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show();
@@ -124,7 +125,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        databaseReference.child(user.getUid()).setValue(userInformationData);
+        databaseReference.child(user.getUid()).child("User Info").setValue(userInformationData);
 
         Toast.makeText(UserInputActivity.this, "User Data Saved", Toast.LENGTH_SHORT).show();
     }
