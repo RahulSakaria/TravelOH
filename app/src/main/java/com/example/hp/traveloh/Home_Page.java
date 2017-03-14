@@ -64,7 +64,6 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
         spinnersInput();
 
 
-
     }
 
     public void ShowDialogOnButtonClick() {

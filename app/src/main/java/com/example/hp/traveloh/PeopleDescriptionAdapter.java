@@ -35,6 +35,10 @@ public class PeopleDescriptionAdapter extends RecyclerView.Adapter<PeopleDescrip
         ListItem listItem = listItems.get(position);
         holder.usernames.setText(listItem.getmName());
         holder.phonenumbers.setText(listItem.getmNumber());
+        holder.froms.setText(listItem.getmFrom());
+        holder.tos.setText(listItem.getmTo());
+        holder.dates.setText(listItem.getmDate());
+        holder.times.setText(listItem.getmTime());
     }
 
     @Override
@@ -45,10 +49,15 @@ public class PeopleDescriptionAdapter extends RecyclerView.Adapter<PeopleDescrip
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView usernames;
         public TextView phonenumbers;
+        public TextView froms,tos,dates,times;
         public ViewHolder(View itemView) {
             super(itemView);
             usernames = (TextView) itemView.findViewById(R.id.traveller_name_cardView);
             phonenumbers = (TextView) itemView.findViewById(R.id.traveller_phone_number_cardView);
+            froms = (TextView) itemView.findViewById(R.id.traveller_from_cardView);
+            tos = (TextView) itemView.findViewById(R.id.traveller_to_cardView);
+            dates = (TextView) itemView.findViewById(R.id.traveller_date_cardView);
+            times = (TextView) itemView.findViewById(R.id.traveller_time_cardView);
         }
     }
 }

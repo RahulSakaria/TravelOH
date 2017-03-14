@@ -16,6 +16,7 @@ public class UserInformationData {
     public String dob;
     public String number;
 
+
     public UserInformationData(String name, String gender, String email, String dob, String number) {
         this.name = name;
         this.gender = gender;

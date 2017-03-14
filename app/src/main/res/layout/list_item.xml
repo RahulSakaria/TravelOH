@@ -8,7 +8,6 @@
         android:layout_height="wrap_content">
         
         <RelativeLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
@@ -26,6 +25,40 @@
                 android:text="Phone Number"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:id="@+id/traveller_phone_number_cardView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/traveller_name_cardView"
+                android:text="time"
+                android:layout_marginTop="5dp"
+                android:id="@+id/traveller_time_cardView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="from"
+                android:layout_below="@id/traveller_phone_number_cardView"
+                android:id="@+id/traveller_from_cardView"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="7dp"
+                android:id="@+id/traveller_date_cardView"
+                android:layout_below="@id/traveller_time_cardView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to"
+                android:layout_below="@id/traveller_phone_number_cardView"
+                android:layout_toRightOf="@id/traveller_from_cardView"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/traveller_to_cardView"/>
+
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

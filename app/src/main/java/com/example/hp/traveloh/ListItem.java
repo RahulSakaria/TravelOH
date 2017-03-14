@@ -11,10 +11,19 @@ public class ListItem {
 
     public String mName;
     public String mNumber;
+    public String mFrom;
+    public String mTo;
+    public String mDate;
+    public String mTime;
 
-    ListItem(String mName, String mNumber) {
+
+    ListItem(String mName, String mNumber, String mFrom, String mTo, String mDate, String mTime) {
         this.mName = mName;
         this.mNumber = mNumber;
+        this.mFrom = mFrom;
+        this.mTo = mTo;
+        this.mDate = mDate;
+        this.mTime = mTime;
     }
 
 
@@ -24,5 +33,22 @@ public class ListItem {
 
     public String getmName() {
         return mName;
+    }
+
+
+    public String getmFrom() {
+        return mFrom;
+    }
+
+    public String getmTo() {
+        return mTo;
+    }
+
+    public String getmDate() {
+        return mDate;
+    }
+
+    public String getmTime() {
+        return mTime;
     }
 }

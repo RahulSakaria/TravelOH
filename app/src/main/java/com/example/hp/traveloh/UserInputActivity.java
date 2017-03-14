@@ -125,7 +125,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        databaseReference.child(user.getUid()).child("User Details").setValue(userInformationData);
+        databaseReference.child(user.getUid()).setValue(userInformationData);
 
         Toast.makeText(UserInputActivity.this, "User Data Saved", Toast.LENGTH_SHORT).show();
     }
