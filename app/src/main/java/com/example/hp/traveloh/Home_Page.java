@@ -32,7 +32,7 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
     private EditText dateoftravel;
     Spinner fromstation, tostation, timerange, modeoftravel;
     String from, to, date, time, mode;
-    private ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         logout = (Button) findViewById(R.id.logout_user);
-        progressDialog = new ProgressDialog(this);
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,17 +100,18 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
         if (view == searchtravellers) {
             travelInfo();
-            progressDialog.setMessage("Searching People Around You...");
-            progressDialog.show();
             startActivity(new Intent(Home_Page.this, PeopleAround.class));
         }
     }
 
     public void travelInfo() {
 
-        UserTravelData travelData = new UserTravelData(from, to, date, time, mode);
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        databaseReference.child(user.getUid()).child("Travelling Details").setValue(travelData);
+        databaseReference.child(user.getUid()).child("from").setValue(from);
+        databaseReference.child(user.getUid()).child("to").setValue(to);
+        databaseReference.child(user.getUid()).child("date").setValue(date);
+        databaseReference.child(user.getUid()).child("time").setValue(time);
+        databaseReference.child(user.getUid()).child("mode").setValue(mode);
 
 
     }
