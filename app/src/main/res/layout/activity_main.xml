@@ -12,11 +12,24 @@
     tools:context="com.example.hp.traveloh.MainActivity">
 
     <TextView
+        android:id="@+id/app_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#009688"
         android:text="travelOH!"
         android:textSize="45sp"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_below="@id/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#009688"
+        android:text="Save While You Travel"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:typeface="serif"
         android:textStyle="italic"
         android:layout_centerInParent="true"

@@ -10,6 +10,7 @@
     <string name="enter_password">Enter Password</string>
     <string name="your_string_here">
         <u>Don\'t have an Account?Sign Up</u>.</string>
+    <string name="notravellersfound">No Travellers Found</string>
     <string-array name="travel_time_range">
         <item>00:00  - 01:00 </item>
         <item>01:00  - 02:00 </item>
@@ -53,6 +54,7 @@
         <item>Mahindra City</item>
         <item>Ampa Skywalk</item>
         <item>Express Avenue</item>
+        <item>Arch Gate</item>
 
     </string-array>
 
@@ -70,12 +72,11 @@
         <item>Mahindra City</item>
         <item>Ampa Skywalk</item>
         <item>Express Avenue</item>
+        <item>Arch Gate</item>
     </string-array>
 
     <string-array name="mode_of_travel">
         <item>Cab</item>
-        <item>Local Train</item>
-        <item>Bus</item>
         <item>Auto</item>
     </string-array>
 

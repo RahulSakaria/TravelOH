@@ -6,12 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".FireApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".FireApp">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,17 +41,10 @@
                 android:value=".LoginActivity" />
         </activity>
         <activity android:name=".Home_Page" />
-        <activity android:name=".PeopleAround">
-            <intent-filter>
-                <action android:name="com.example.hp.PeopleAround" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Home_Page" />
-        </activity>
+        <activity
+            android:name=".PeopleAround"
+            android:label="People Around" />
+        <activity android:name=".HomeScreen"></activity>
     </application>
 
 </manifest>

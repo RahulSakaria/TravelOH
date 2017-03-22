@@ -64,7 +64,6 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         if (view == createAccount) {
             registerUser();
-
         }
     }
 
@@ -100,6 +99,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
                                 Toast.makeText(UserInputActivity.this, "Registered Successful", Toast.LENGTH_SHORT).show();
                                 finish();
                                 Intent intent = new Intent(UserInputActivity.this, Home_Page.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(UserInputActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();

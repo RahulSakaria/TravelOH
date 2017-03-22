@@ -1,11 +1,12 @@
 package com.example.hp.traveloh;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
@@ -22,14 +23,14 @@ public class PeopleAround extends AppCompatActivity {
     private String uid;
     private DatabaseReference mref;
     private String date, from, mode, time, to, userid, name, number;
-    private ProgressDialog progressDialog;
+    private TextView notraveller;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_around);
-        progressDialog = new ProgressDialog(this);
+        notraveller = (TextView) findViewById(R.id.no_travellers_found);
         uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mref = FirebaseDatabase.getInstance().getReferenceFromUrl("https://traveloh-fa3fa.firebaseio.com/");
         mref.addListenerForSingleValueEvent(new com.google.firebase.database.ValueEventListener() {
@@ -45,6 +46,7 @@ public class PeopleAround extends AppCompatActivity {
                 listItems = new ArrayList<ListItem>();
 
                 for (com.google.firebase.database.DataSnapshot dsp : dataSnapshot.getChildren()) {
+
                     traveldet single = dsp.getValue(traveldet.class);
 
                     if (single.getFrom().equals(from) && single.getTo().equals(to) && single.getTime().equals(time) && single.getDate().equals(date)) {
@@ -52,11 +54,12 @@ public class PeopleAround extends AppCompatActivity {
 
                         if (!single.getName().equals(name)) {
 
-
                             ListItem listItem = new ListItem(single.getName(), single.getNumber(), single.getFrom() + "  -", single.getTo(), single.getDate(), single.getTime());
-
                             listItems.add(listItem);
+                            notraveller.setVisibility(View.GONE);
+                        } else {
 
+                            notraveller.setText(R.string.notravellersfound);
                         }
                     }
 
@@ -67,7 +70,7 @@ public class PeopleAround extends AppCompatActivity {
                 recyclerView.setLayoutManager(new LinearLayoutManager(PeopleAround.this));
                 adapter = new PeopleDescriptionAdapter(listItems, PeopleAround.this);
                 recyclerView.setAdapter(adapter);
-                progressDialog.dismiss();
+
             }
 
             @Override

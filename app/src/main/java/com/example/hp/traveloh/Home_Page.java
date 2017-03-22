@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Transaction;
 
 public class Home_Page extends AppCompatActivity implements View.OnClickListener {
     private Button logout, searchtravellers;
@@ -32,14 +34,16 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
     private EditText dateoftravel;
     Spinner fromstation, tostation, timerange, modeoftravel;
     String from, to, date, time, mode;
+    private ProgressDialog progressDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__page);
+        progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseUser = firebaseAuth.getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         logout = (Button) findViewById(R.id.logout_user);
@@ -96,11 +100,23 @@ public class Home_Page extends AppCompatActivity implements View.OnClickListener
         }
     };
 
+
+
     @Override
     public void onClick(View view) {
         if (view == searchtravellers) {
             travelInfo();
-            startActivity(new Intent(Home_Page.this, PeopleAround.class));
+            progressDialog.setMessage("Searching People Around You...");
+            progressDialog.show();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(Home_Page.this, PeopleAround.class));
+                    progressDialog.dismiss();
+                }
+            },3000);
+
         }
     }
 
