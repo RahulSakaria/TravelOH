@@ -53,12 +53,10 @@ public class PeopleAround extends AppCompatActivity {
                         Log.e("TESTING", "onDataChange: " + single.getFrom());
 
                         if (!single.getName().equals(name)) {
-
                             ListItem listItem = new ListItem(single.getName(), single.getNumber(), single.getFrom() + "  -", single.getTo(), single.getDate(), single.getTime());
                             listItems.add(listItem);
                             notraveller.setVisibility(View.GONE);
                         } else {
-
                             notraveller.setText(R.string.notravellersfound);
                         }
                     }

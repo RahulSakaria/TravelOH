@@ -38,7 +38,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() != null) {
             finish();
-            Intent intent = new Intent(this, Home_Page.class);
+            Intent intent = new Intent(this, BaseNavigationDrawerActivity.class);
             startActivity(intent);
         }
         emailid = (EditText) findViewById(R.id.enter_email);
@@ -73,7 +73,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             progressDialog.dismiss();
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             finish();
-                            Intent intent = new Intent(LoginActivity.this, Home_Page.class);
+                            Intent intent = new Intent(LoginActivity.this, BaseNavigationDrawerActivity.class);
                             startActivity(intent);
                         } else {
                             progressDialog.dismiss();
