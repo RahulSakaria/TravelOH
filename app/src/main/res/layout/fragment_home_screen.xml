@@ -1,60 +1,130 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.hp.traveloh.HomeScreenFragment">
+    android:background="@drawable/home_screen_background"
+    tools:context="com.project.hp.traveloh.HomeScreenFragment">
+
 
     <RelativeLayout
+        android:id="@+id/profile_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/profile_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:elevation="12dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:id="@+id/profile_image_home_screen"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/profile_pic" />
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/profile_name_home_screen_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_photo"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Profile Name"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/gradient"
-            android:id="@+id/profile_layout">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_name_home_screen_fragment"
+            android:layout_marginTop="80sp">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/profile_photo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="48dp"
-                android:elevation="12dp"
-                android:innerRadius="0dp"
-                android:shape="ring"
-                android:thicknessRatio="1.9"
-                app:cardCornerRadius="40dp">
+            <LinearLayout
+                android:id="@+id/search_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:padding="20sp">
 
                 <ImageView
-                    android:id="@+id/profile_image_home_screen"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_centerHorizontal="true"
-                    android:onClick="selectProfileImage"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/profile_pic"/>
-            </android.support.v7.widget.CardView>
+                    android:id="@+id/home_screen_search"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_search_black_24dp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="@string/search_travellers"
+                    android:textColor="#FFFFFF" />
 
-            <TextView
-                android:id="@+id/profile_name"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/message_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/search_linear_layout"
+                android:orientation="vertical"
+                android:padding="20sp">
+
+                <ImageView
+                    android:id="@+id/home_screen_messaging"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_message_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="@string/message"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/info_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/profile_photo"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Profile Name"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                android:layout_toRightOf="@id/message_linear_layout"
+                android:orientation="vertical"
+                android:padding="20sp">
+
+                <ImageView
+                    android:id="@+id/home_screen_info"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_info_black_24dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="23dp"
+                    android:text="Info"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+
         </RelativeLayout>
 
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/profile_layout"
-            android:gravity="center"
-            android:numColumns="3"/>
     </RelativeLayout>
 </FrameLayout>

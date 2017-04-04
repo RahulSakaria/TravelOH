@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.project.hp.traveloh.MessageActivity"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/message_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="470dp">
+
+    </ListView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message_list_item"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:inputType="textLongMessage"
+            android:focusableInTouchMode="true"
+            android:id="@+id/enter_message"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:hint="@string/type_a_message"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:paddingTop="10dp"
+            android:textColorHint="@color/primary_text" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_send_black_24dp" />
+    </LinearLayout>
+
+</RelativeLayout>

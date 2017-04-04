@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:paddingBottom="2dp">
 
     <android.support.v7.widget.CardView
@@ -13,54 +14,56 @@
             android:id="@+id/relative_layout_people_around"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@color/appNameColor">
+            android:background="@color/colorPrimaryDark"
+            android:padding="16dp">
+
             <TextView
+                android:id="@+id/traveller_name_cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TravellersName"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:id="@+id/traveller_name_cardView" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
             <TextView
-                android:layout_below="@id/traveller_name_cardView"
+                android:id="@+id/traveller_phone_number_cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/traveller_name_cardView"
                 android:text="Phone Number"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:id="@+id/traveller_phone_number_cardView"/>
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
             <TextView
+                android:id="@+id/traveller_time_cardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignRight="@id/traveller_name_cardView"
-                android:text="time"
+                android:layout_alignEnd="@id/traveller_name_cardView"
                 android:layout_marginTop="5dp"
-                android:id="@+id/traveller_time_cardView"/>
+                android:text="time" />
 
             <TextView
+                android:id="@+id/traveller_from_cardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="from"
                 android:layout_below="@id/traveller_phone_number_cardView"
-                android:id="@+id/traveller_from_cardView"/>
+                android:text="from" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="date"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="7dp"
                 android:id="@+id/traveller_date_cardView"
-                android:layout_below="@id/traveller_time_cardView"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="to"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/traveller_time_cardView"
+                android:layout_marginTop="7dp"
+                android:text="date" />
+
+            <TextView
+                android:id="@+id/traveller_to_cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/traveller_phone_number_cardView"
-                android:layout_toRightOf="@id/traveller_from_cardView"
-                android:layout_marginLeft="10dp"
-                android:id="@+id/traveller_to_cardView"/>
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/traveller_from_cardView"
+                android:text="to" />
 
 
         </RelativeLayout>

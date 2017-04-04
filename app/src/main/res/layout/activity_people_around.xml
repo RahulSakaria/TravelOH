@@ -4,10 +4,10 @@
     android:id="@+id/activity_people_around"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@drawable/home_screen_background"
     android:orientation="vertical"
 
-    tools:context="com.example.hp.traveloh.PeopleAround">
+    tools:context="com.project.hp.traveloh.PeopleAround">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
